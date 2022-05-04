@@ -10,10 +10,10 @@ pipeline {
                     echo "Now Archiving the Artifacts...."
                     archiveArtifacts artifacts: '**/*.war'
                 }
-            }
+           }
         }
     }
- 
+    
         Stage('Create Tomcat Docker Image'){
             steps {
                 sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
